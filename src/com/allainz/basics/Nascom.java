@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Nascom {
 
@@ -22,10 +23,19 @@ public class Nascom {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)) ;  
 		driver.get("https://nasscom.in/ ");
 		driver.findElement(By.linkText("Login")).click();
+		driver.findElement(By.xpath("//*[@class='d-flex flex-wrap justify-content-center']//child::li[2]")).click();
 		
-		driver.findElement(By.id("edit-name")).sendKeys("admin");
-		driver.findElement(By.id("edit-pass")).sendKeys("pass");
-		driver.findElement(By.id("edit-pass")).sendKeys("pass");
+		
+		driver.findElement(By.id("edit-field-fname-reg-0-value")).sendKeys("admin");
+		driver.findElement(By.id("edit-field-lname-0-value")).sendKeys("pass");
+		driver.findElement(By.id("edit-mail")).sendKeys("admin@gmail.com");
+		driver.findElement(By.id("edit-field-company-name-registration-0-value")).sendKeys("Google");
+		
+		Select business=new Select(driver.findElement(By.id("edit-field-business-focus-reg")));
+		business.selectByVisibleText("IT Consulting");
+		
+		driver.findElement(By.id("edit-submit--2")).click();
+		driver.close();
 		
 	}
 

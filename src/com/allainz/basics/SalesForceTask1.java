@@ -35,6 +35,9 @@ public class SalesForceTask1 {
 			WebElement Lastname= driver.findElement(By.name("UserLastName"));
 			Lastname.sendKeys("wick");
 			
+			WebElement companyName= driver.findElement(By.name("CompanyName"));
+			companyName.sendKeys("Allianz");
+			
 			Select Country= new Select(driver.findElement(By.name("CompanyCountry")));
 			Country.selectByVisibleText("United Kingdom");
 			
@@ -49,13 +52,18 @@ public class SalesForceTask1 {
 			Select CompanyEmployees= new Select(driver.findElement(By.name("CompanyEmployees")));
 			CompanyEmployees.selectByValue("350");
 			
-			driver.findElement(By.xpath("	//button[@class='embeddedServiceActionButton']")).click();
 			
 		
 			WebElement Checkbox= driver.findElement(By.xpath("(//div[@class='checkbox-ui'])[2]"));
 			Checkbox.click();
 			
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
+			
+			driver.findElement(By.xpath("	//button[@class='embeddedServiceActionButton']")).click();
+			
+			
+			String validation=driver.findElement(By.xpath("(//*[@class='error-msg'])[7]")).getText();
+			System.out.println(validation);
 			
 			
 			
