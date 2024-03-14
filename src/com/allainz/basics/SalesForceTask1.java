@@ -65,17 +65,8 @@ public class SalesForceTask1 {
 			String validation=driver.findElement(By.xpath("(//*[@class='error-msg'])[7]")).getText();
 			System.out.println(validation);
 			
+		}
 			
-			
-		   
-			}
-			
-			
-			
-			
-			
-			
-			
-	}
+}
 
 
