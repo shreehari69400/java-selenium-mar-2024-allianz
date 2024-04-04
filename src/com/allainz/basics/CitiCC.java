@@ -27,6 +27,8 @@ public class CitiCC {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)) ;   
 		driver.get("https://www.citibank.co.in/ssjsps/forgetuserid.jsp");
 		
+		
+		
 		WebElement AccountType=driver.findElement(By.partialLinkText("select your product type"));
 		AccountType.click();
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -61,5 +63,7 @@ public class CitiCC {
 		
 
 	}
+
+	
 
 }
